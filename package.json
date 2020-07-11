@@ -1,0 +1,58 @@
+{
+    "name": "ide-mini-program-component",
+    "version": "0.0.1",
+    "displayName": "",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/blocklang/ide-mini-program-component.git"
+    },
+    "scripts": {
+        "build": "dojo build --mode dist --single-bundle --omit-hash && shx cp src/icons.svg output/dist",
+        "test": "dojo test",
+        "test:unit": "dojo build --mode unit && dojo test --unit --config local",
+        "test:functional": "dojo build --mode functional && dojo test --functional --config local",
+        "test:all": "dojo build --mode unit && dojo build --mode functional && dojo test --all --config local",
+        "prettier": "prettier --write \"{src,tests}/**/*.{ts,tsx,css}\""
+    },
+    "dependencies": {
+        "@dojo/framework": "^7.0.1",
+        "@blocklang/designer-core": "~0.0.1-alpha.93",
+        "@blocklang/mini-program-component": "~0.0.1-alpha.1",
+        "tslib": "~2.0.0"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^9.0.1",
+        "@commitlint/config-conventional": "^9.0.1",
+        "@dojo/cli": "^7.0.0",
+        "@dojo/cli-build-app": "^7.0.0",
+        "@dojo/cli-build-widget": "^7.0.0",
+        "@dojo/cli-test-intern": "^7.0.0",
+        "@types/node": "^14.0.22",
+        "@types/sinon": "^9.0.4",
+        "husky": "^4.2.5",
+        "lint-staged": "^10.2.11",
+        "prettier": "^2.0.5",
+        "shx": "^0.3.2",
+        "sinon": "^9.0.2",
+        "typescript": "~3.9.6"
+    },
+    "husky": {
+        "hooks": {
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.{ts,tsx,css}": [
+            "prettier --write",
+            "git add"
+        ]
+    },
+    "prettier": {
+        "singleQuote": false,
+        "tabWidth": 4,
+        "useTabs": true,
+        "printWidth": 120,
+        "arrowParens": "always"
+    }
+}
