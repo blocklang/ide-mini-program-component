@@ -15,9 +15,9 @@
         "prettier": "prettier --write \"{src,tests}/**/*.{ts,tsx,css}\""
     },
     "dependencies": {
-        "@dojo/framework": "^7.0.1",
-        "@blocklang/designer-core": "~0.0.1-alpha.93",
+        "@blocklang/designer-core": "~0.0.1-alpha.96",
         "@blocklang/mini-program-component": "~0.0.1-alpha.1",
+        "@dojo/framework": "^7.0.1",
         "tslib": "~2.0.0"
     },
     "devDependencies": {
