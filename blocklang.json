@@ -9,7 +9,7 @@
         "git": "https://github.com/blocklang/api-mini-program-component.git",
         "version": "master"
     },
-    "component": [
+    "components": [
         "src/app",
         "src/page"
     ]
